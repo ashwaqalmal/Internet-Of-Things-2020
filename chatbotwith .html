@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>chatBot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+
+
+
+ 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+ 
+  background: url(https://images.pexels.com/photos/327064/pexels-photo-327064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+
+
+
+}
+
+
+.center{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.outer{
+  position: relative;
+  margin: 0 50px;
+  background: #664AFF;
+}
+.button{
+  height: 70px;
+  width: 220px;
+  border-radius: 50px;
+}
+.circle{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.outer button, .outer span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.outer button{
+  background: #111;
+  color: #f2f2f2;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  z-index: 9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button button{
+  height: 60px;
+  width: 210px;
+  border-radius: 50px;
+}
+.circle button{
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+.outer span{
+  height: 100%;
+  width: 100%;
+  background: inherit;
+}
+.button span{
+  border-radius: 50px;
+}
+.circle span{
+  border-radius: 50%;
+}
+.outer:hover span:nth-child(1){
+  filter: blur(7px);
+}
+.outer:hover span:nth-child(2){
+  filter: blur(14px);
+}
+.outer:hover{
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+@media (max-width: 500px){
+  .center{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .outer{
+    margin: 50px 0;
+  }
+
+}
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+    <div class="center">
+   
+        <span></span>
+          
+          <table style="width:40%">
+           <tr>
+             <th>  </th>
+             <th>  </th> 
+             <th>  </th>
+           </tr>
+                <tr><td></td>
+             <td>  <div class="center">
+               <div class="outer button">
+               <button>Foward</button>
+               <span></span>
+               <span></span>
+               </div>        </td>
+               <td>   </td>
+                 </tr> </div>
+         
+                 <br>
+         
+               <tr>
+             <td></td>  <div class="outer button">
+               <button>Left</button>
+               <span></span>
+               <span></span>
+               </div>
+              </div>
+             <br>
+             <br> <br> <br> <br> <br>
+       
+             
+             </td>
+                <td> 
+                 <br><br><br><br>
+       
+                 
+                 <div class="outer circle">
+                   <button>STOP</button>
+                   <span></span>
+                   <span></span>
+                   </div>
+                   </td>
+       
+                <td>
+                  
+                 <br>
+                  <br>
+                  <br>
+                  <br>
+                 <div class="outer button">
+                 <button>right</button>
+                 <span></span>
+                 <span></span>
+                 </div>  
+                  </td>
+                </tr>  </div>
+         
+                 
+                 
+                 <tr>
+       
+       
+                 <td></td>
+             <td>  
+               <br><br><br><br>
+               
+               <div class="outer button">
+               <button>Backward</button>
+               <span></span>
+               <span></span>
+               </div>
+                 <td> 
+                </td>
+                </tr>
+       
+       
+                <script>
+                  window.watsonAssistantChatOptions = {
+                      integrationID: "a3576d26-7706-4328-b387-e4bd1633d89c", // The ID of this integration.
+                      region: "eu-gb", // The region your integration is hosted in.
+                      serviceInstanceID: "bec9d96a-99c1-4a54-bb5e-c538f5de7d91", // The ID of your service instance.
+                      onLoad: function(instance) { instance.render(); }
+                    };
+                  setTimeout(function(){
+                    const t=document.createElement('script');
+                    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+                    document.head.appendChild(t);
+                  });
+                </script>
+       
+     
+       
+       
+
+
+</body>
+</html>

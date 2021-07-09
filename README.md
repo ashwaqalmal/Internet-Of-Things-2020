@@ -1,13 +1,6 @@
-# Six Motors Control Panel Web Page Front-End Full stack developing 
-*This repository is about creating a control panel web page for controlling six motors by its angles*
-**NOTE**
-***this work is based on Full Stack Front-End developing***
-*Here is the list of files:*
-1. index.html 
-2. style.css
-3. main.js
-4. index.php
-5. fetch-latest-record.php
-6. RECORDING Vd
-
-
+# Waston-Assistant-chatbot-
+في هذه المهمة  انشائنا  بوت للردعلى المستخدمين
+والترحيب والرد على طلباتهم
+في حال كتبت انا اريد قهوة سيتم الرد عليك بتجهيزها حالا او خلال عدة دقائق ستكون جاهزة 
+ايضا تم اضافة هذا الشات بوت الى لوحة التحكم بالقاعدة سابقا 
+وكذلك اضافة ملف json
