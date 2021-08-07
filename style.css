@@ -1,177 +1,151 @@
+/* للخطوط قمنا با استدعاء هذا الرابط */
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/*    للكل اخترنا     */
 
-body{
-    background: rgb(110, 110, 110);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color :black ;
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-p{
-    margin-top: 50px;
-    opacity: 0.7;
-    margin-top: 120px ;
-}
-
-h3{
+html, body {
+    display: grid;
+    height: 100%;
     text-align: center;
+    place-items: center;
+    background: #664AFF;
 }
 
-.slideContainer{
-    width: 75%;
-    margin-top: 100px;
+h1 {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+/* للعنوان والفقرات اخترنا اللون الابيض */
+
+h1, p {
+    color: #fff;
 }
 
-
-
-.motor1::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top: 35%;
+.range {
+    height: 80px;
+    width: 380px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 65px 0 45px;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
 }
 
-.motor1::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 35%;
+.sliderValue {
+    position: relative;
+    width: 100%;
 }
 
+    .sliderValue span {
+        position: absolute;
+        height: 45px;
+        width: 45px;
+        transform: translateX(-22%) scale(0);
+        font-weight: 500;
+        top: -40px;
+        line-height: 55px;
+        z-index: 2;
+        color: #fff;
+        transform-origin: bottom;
+        transition: transform 0.3s ease-in-out;
+    }
 
-.motor2::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top:80%;
+        .sliderValue span.show {
+            transform: translateX(-22%) scale(1);
+        }
+
+        .sliderValue span:after {
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 100%;
+            background: #664AFF;
+            border: 3px solid #fff;
+            z-index: -1;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            border-bottom-left-radius: 50%;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
 }
 
-.motor2::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 80%;
-}
+    .field .value {
+        position: absolute;
+        font-size: 18px;
+        color: #664AFF;
+        font-weight: 600;
+    }
 
+        .field .value.left {
+            left: -22px;
+        }
 
-.motor3::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top:125%;
-}
+        .field .value.right {
+            right: -43px;
+        }
 
-.motor3::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 125%;
-}
-
-.motor4::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top:170%;
-}
-
-.motor4::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 170%;
-}
-
-
-.motor5::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top:220%;
-}
-
-.motor5::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 220%;
-}
-
-
-.motor6::after{
-    content: '180';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top:270%;
-}
-
-.motor6::before{
-    content: '0';
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 270%;
-}
-
-
-
-
-
-.slider{
+.range input {
     -webkit-appearance: none;
     width: 100%;
-    height: 20px;
-    background: rgb(117, 252, 117);
+    height: 3px;
+    background: #ddd;
+    border-radius: 5px;
     outline: none;
-    opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition:  0.2s;
-    border-radius: 10px;
-    box-shadow: 0px 1px 10px 1px black;
+    border: none;
+    z-index: 2222;
 }
 
-.slider :hover{
-    opacity: 1;
+    .range input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+        background: #664AFF;
+        border: 1px solid #664AFF;
+        cursor: pointer;
+    }
+
+    .range input::-moz-range-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+        background: #664AFF;
+        border: 1px solid #664AFF;
+        cursor: pointer;
+    }
+
+    
+.btn {
+    width: 280px;
+    height: 35px;
+    padding: 5px 22px;
+    border-radius: 80px;
+    color: rgb(8, 7, 8);
+    font-family: sans-serif;
+    font-size: large;
+    margin-bottom: 20px;
 }
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 10px;
-    background: white;
-    cursor: pointer;
-  }
-
-
-
+.btn:hover{
+    border: 4px solid #e0dfe6;
+    background-color:#664AFF ;
+    color: #ddd;
+}
